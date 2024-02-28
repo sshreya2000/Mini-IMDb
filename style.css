@@ -1,0 +1,178 @@
+:root{
+    --font_color_1:white;
+    --bg_color_1:rgb(94, 93, 93);
+	--bg_color_2:rgb(122, 122, 122);
+	--bg_color_3:rgb(0, 110, 255);
+}
+/* Home Page */
+body{
+    background-image: linear-gradient(black, rgb(94, 93, 93), black);
+     background-size: contain;
+     width: 100vw;
+     height:100vh;
+     color:var(--font_color_1);
+}
+
+/* nav bar */
+.navbar-brand img{
+    width:2.5rem;
+}
+
+.navbar-toggler-icon{
+   color: var(--font_color_1) !important;
+}
+
+/* header */
+header h1{
+    font-size: 60px;
+    position:relative;
+    top:100px;
+}
+
+/* search bar */
+#search-bar{
+    justify-content: center;
+    position:relative;
+    top:150px;
+}
+
+/* search list */
+.search-list{
+    display:block;
+    position:absolute;
+    top:40%;
+    left:34%;
+    max-height:50vh;
+    width:500px;
+    overflow-wrap: break-word;
+    overflow-y:scroll;
+    overflow-x: hidden;
+}
+.search-list .search-list-item{
+    background-color: var(--bg_color_1);
+    transition: background-color 1s ease-in-out;
+    padding:0.2rem;
+    cursor:pointer;
+    display:flex;
+    justify-content: space-between;
+}
+.search-list .search-list-item .search-info{
+    display:flex;
+    width:95%;
+}
+
+.search-list .search-list-item:hover{
+    background-color: var(--bg_color_2);
+}
+
+.search-list .search-list-item div{
+    margin:auto 4px;
+}
+
+.hide{
+    display:none;
+}
+
+/* Movie Page */
+#moviePage{
+    display:flex;
+    flex-direction: column;
+    padding:0.5rem;
+    cursor:pointer;
+    width:inherit;
+    position:relative;
+    top:4em;
+}
+.movie-header{
+    display:flex;
+    justify-content: space-between;
+}
+.movie-review{
+    position:relative;
+    right:25px;
+    display:flex;
+    flex-direction: column;
+}
+.movie-rating{
+    font-size: 20px;
+    font-style: italic;
+    padding:0.2em;
+}
+.movieElement{
+    display:flex;
+    align-content:flex-start;
+    padding:0.2rem;
+    cursor:pointer;
+    width:80%;
+}
+.movieElement div{
+    margin:4px;
+}
+.movie-image img{
+    width:15rem;
+    height:20rem;
+}
+.movie-genre{
+ display:flex;
+ justify-content: flex-start;
+}
+.movie-genre div{
+    border: 2px solid var(--font_color_1);
+    border-radius: 10px;
+    padding:5px;
+}
+
+.fa-bookmark{
+    font-size: larger;
+}
+
+/* add to favourite from movie page */
+.addfavfrommovie{
+    background-color: rgb(112, 112, 3);
+    padding: 4px;
+    border-radius: 5px;
+    text-align: center;
+}
+.addfavfrommovie:hover{
+    background-color: rgb(149, 149, 3);
+}
+
+/* favourite page */
+#favourites-page{
+    display:flex;
+    flex-direction: column;
+    position:absolute;
+    top:30%;
+    left:2%;
+    width:60%;
+}
+.fav-element{
+    background-color: var(--bg_color_1);
+    transition: background-color 1s ease-in-out;
+    padding:0.5rem;
+    cursor:pointer;
+    display:flex;
+    justify-content: space-between;
+    margin:2px;
+}
+.fav-info{
+    display:flex;
+}
+.fav-header{
+    padding-left: 10px;
+}
+.fav-element button{
+    position:relative;
+    top:30px;
+    height:25px;
+    font-size: smaller;
+}
+#header{
+    font-size: larger;
+    position:relative;
+    top:70px;
+    left:2%;
+}
+.fav-name, .fav-Year{
+    font-size: large;
+}
