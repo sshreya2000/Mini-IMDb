@@ -76,22 +76,29 @@ function moviePage(){
     })
 }
 
-const favItems = [];
+let favItems = [];
 
 // favourite function
 function favouriteFunc(){
     let favouriteElement=document.querySelectorAll("#favourite");
     favouriteElement.forEach(favEl=>{
         favEl.addEventListener('click',()=>{
-            if(!favEl.classList.contains("color-change")){
+            var movieslist=JSON.parse(localStorage.getItem("favValue"));
+            if(movieslist==null){
                 favEl.classList.add("color-change");
                 addToFavourites(favEl.parentNode.firstElementChild);
             }
-            else {
-                favEl.classList.remove("color-change");
-                removeFavourites(favEl.parentNode.firstElementChild);
-            }
-            
+            else{
+                favItems=movieslist;
+                if(!favEl.classList.contains("color-change")){
+                    favEl.classList.add("color-change");
+                    addToFavourites(favEl.parentNode.firstElementChild);
+                }
+                else {
+                    favEl.classList.remove("color-change");
+                    removeFavourites(favEl.parentNode.firstElementChild);
+                }
+            } 
         })
     })
 }
@@ -102,7 +109,7 @@ async function addToFavourites(movie){
     try {
         const response = await fetch(`${URL3}`);
         const result = await response.json();
-        favItems.push(result);
+        if(!favItems.includes(result))favItems.push(result);
         console.log(result);
         myfav();
     } catch (error) {
