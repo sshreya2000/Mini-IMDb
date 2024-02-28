@@ -1,1 +1,1 @@
-"git_it"
+"Mini IMDb application to search the film using omdbapi"
